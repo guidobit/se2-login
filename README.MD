@@ -34,7 +34,11 @@ Step 4 might need some improvement, but this will be added in a later iteration.
  
 #### GIT use
 To work on a feature, create a seperate branch as followed:
+
 `git branch` --> this prints your current branch
+
 `git checkout master` ---> if you are not on master
+
 `git checkout -b feature/my-cool-feature` --> to work on your awesome feature
+
 
