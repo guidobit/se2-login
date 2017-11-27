@@ -45,4 +45,7 @@ To work on a feature, create a seperate branch as followed:
 
 `git checkout -b feature/my-cool-feature` --> to work on your awesome feature
 
-
+### FLASK
+In the container run the following:
+`export FLASK_APP=run.py && flask run --host=0.0.0.0`
+Now in your browser open localhost

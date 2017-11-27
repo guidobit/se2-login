@@ -1,6 +1,6 @@
 ########### Custom insert here
 *.iml
-
+*__pycache__
 
 ########### End of custom lines
 
