@@ -1,5 +1,9 @@
 FROM python:rc-alpine3.6
 
+MAINTAINER HVA-students
+
+ARG ENV=prod
+
 RUN apk update && \
     mkdir /app && \
     echo "############# HVA PROJECT ################" && \
@@ -15,6 +19,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-#CMD /bin/sh # For debugging only
 CMD python3 run.py
-

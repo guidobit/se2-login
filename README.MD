@@ -28,7 +28,11 @@ For now the process is as followed.
 1. Activate the virtualenv
 2. If you have new dependencies, install with `pip install your-dependency`
 3. If you want to commit the dependency to git or test it in the Dockerfile, run `pip freeze`, find the line with the dependency and add this to a newline in `requirements.txt`
-4. After changes to your code, re-run the `docker build` && `docker run` command.
+4. With the commands below you can run a container with mounted volumes
+
+Mounted volumes:
+`docker run -it -v $(pwd -LP):/app se2-login:latest /bin/sh` --> This runs the container with mounted volumes
+`python3 run.py` --> Runs the app, use `ctrl+c` to stop the app
 
 Step 4 might need some improvement, but this will be added in a later iteration.
  

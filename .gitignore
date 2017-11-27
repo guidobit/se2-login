@@ -1,3 +1,9 @@
+########### Custom insert here
+*.iml
+
+
+########### End of custom lines
+
 
 # Created by https://www.gitignore.io/api/osx,linux,windows,intellij,notepadpp,virtualenv,sublimetext
 
