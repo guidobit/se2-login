@@ -13,22 +13,22 @@ def login():
 
 
 @app.route("/api/v1/register", methods=["POST"])
-def login():
+def register():
     return "register api"
 
 
 @app.route("/api/v1/logout", methods=["GET"])
-def login():
+def logout():
     return "logout api"
 
 
 @app.route("/api/v1/validate/token", methods=["POST"])
-def login():
+def token():
     return "validate/token api"
 
 
 @app.route("/api/v1/publickey", methods=["GET"])
-def login():
+def publickey():
     return "publickey api"
 
 
