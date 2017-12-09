@@ -12,10 +12,24 @@ def login():
     return "login api"
 
 
-@app.route("/api/v1/register", methods=["POST"])
+@app.route("/api/v1/register", methods=["POST","PUT"])
 def register():
-    return "register api"
+	error=None
+	content = request.get_json()
+	if request.method == 'PUT':
+		  print (content['username'])
+		  print (content['password'])
+		  print (content['email'])
+		  return "\nUser registration received for user %s\n" % content['username']
+	else:
+		error = 'Onjuiste registratie'
+		#getest met curl -X PUT http://localhost:5000/api/v1/register -d "{\"username\":\"dcoomans\", \"password\":\"#W@chtw00rd23\",\"email\":\"dennis.coomans@hva.nl\"}" --header "Content-Type: application/json"
 
+def valid_registration():
+	error=None
+
+def register_the_user():
+	error=None
 
 @app.route("/api/v1/logout", methods=["GET"])
 def logout():
