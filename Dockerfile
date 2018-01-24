@@ -9,7 +9,8 @@ RUN apk update && \
     echo "############# HVA PROJECT ################" && \
     echo "Installed versions for Python & PIP:" && \
     python --version && \
-    pip --version
+    pip --version && \
+    apk add --update --no-cache gcc musl-dev libffi-dev python3-dev
 
 VOLUME /app
 WORKDIR /app
