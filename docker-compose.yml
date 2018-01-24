@@ -1,0 +1,34 @@
+version: '2'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - 80:5000
+    volumes:
+     - ./:/app
+#    links:
+#      - se2db:se2db
+#    depends_on:
+#      - se2db
+    environment:
+      FLASK_APP: run.py
+      PYTHONUNBUFFERED: 1
+      HOST: 0.0.0.0
+      #DATABASE_URL: mysql+mysqlconnector://admin:admin@se2db:3306/se2schema
+      DATABASE_URL: sqlite+pysqlite:///db.db
+
+#  se2db:
+#    container_name: se2db
+#    image: wangxian/alpine-mysql
+#    volumes:
+#      - ./database:/var/lib/mysql
+#    environment:
+#      MYSQL_DATABASE: se2schema
+#      MYSQL_USER: admin
+#      MYSQL_PASSWORD: admin
+#      MYSQL_ROOT_PASSWORD: super_secure_password
+#    ports:
+#      - "3306:3306"
+

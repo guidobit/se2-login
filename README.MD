@@ -10,8 +10,14 @@ Clone this project from github
 Virtualenv (or windows equivalent)
 
 #### How to use:
+
+For backend docker only:
 1. Build the container: `docker build -t se2-login:latest .`  (don't forget the `.` at the end)
 2. Run the container: `docker run se2-login:latest`
+
+To run both the database & the docker container: 
+1. Build the container(s): `docker-compose build`
+2. Run the container(s): `docker-compose up`
 
 #### How this works
 The Dockerfile instructs the docker deamon to copy over the project files and install the requirements, after this is done it will run the program by running `python3 run.py`
