@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Response
+from flask import Flask, jsonify, request, render_template, redirect, url_for, request
 app = Flask(__name__)
 
 
@@ -7,9 +7,17 @@ def hello():
     return "Hello World! Lets go, test!"
 
 
-@app.route("/api/v1/login", methods=["POST"])
+# route for handling the login page logic
+@app.route("/api/v1/login", methods=["GET", "POST"])
 def login():
-    return "login api"
+    error = None
+    if request.method == "POST":
+        if request.form['username'] != 'dfraenk' or request.form['password'] != 'welkom01':
+            error = 'Your username and/or password are incorrect!. Please try again.'
+        else:
+            return redirect(url_for('hello'))
+    return render_template('login.html', error=error)
+
 
 
 @app.route("/api/v1/register", methods=["POST","PUT"])
